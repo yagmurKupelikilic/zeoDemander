@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
+import seozeo from '../seozeo.png';
+
 
 export default class Login extends Component {
   constructor(props) {
@@ -28,11 +30,15 @@ export default class Login extends Component {
   render() {
     return (
 
-      <div className= "Login">
-      <div className="card-header">
+
+      <div className= "col-md-8">
+      <div className="seozeo">
+         <img src={seozeo}/>
+        </div>
+      <div className="card">
       <div className="card-body">
-                 
-                          <form onSubmit = {this.handleSubmit}>
+  
+                          <form onSubmit = {this.handleSubmit} className="form">
                               <div className="form-group">
                               <label htmlform="email">Email</label>
                               <input 

@@ -11,6 +11,7 @@ class App extends Component {
       <Router>
       <div className="App">
       <Navbar title ="ZeoDemander"/>
+      
 
       <Switch>
         <Route exact path = "/login" component ={Login} />

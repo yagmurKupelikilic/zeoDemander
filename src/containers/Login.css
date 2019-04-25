@@ -1,11 +1,18 @@
-@media all and (min-width: 480px) {
-    .Login {
-      padding: 60px 0;
+   
+    .seozeo {
+      display: block;
+      float: right;
+      width: 360px;
+    }
+    .card {
+      display: block;
+      float: left;
+    }
+
+    .form{
+      background:  ivory;
+      margin-top: 50px;
+
     }
   
-    .Login form {
-      margin: 0 auto;
-      max-width: 320px;
-    }
-  }
-  
+    

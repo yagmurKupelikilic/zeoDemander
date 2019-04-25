@@ -7,16 +7,17 @@ function Navbar({title}) {
    <nav className ="navbar-nav navbar-expand-lg navbar-dark bg-dark mb-3 p-3">
    <a href="/" className="navbar-brand">{title}</a>
    
+   
    <ul className="navbar-nav ml-auto">
-     <li className="nav-item active">
-     <Link to ="/account" >My account</Link>
-     </li>
 
      <li className="nav-item active">
      <Link to ="/orders" >Orders</Link>
      </li>
 
-     
+     <li className="nav-item active">
+     <Link to ="/account" >My account</Link>
+     </li>
+
    </ul>
    </nav>
    

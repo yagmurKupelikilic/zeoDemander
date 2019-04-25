@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Login.css";
 import zeo from '../zeo.png';
+import "./register.css"
 
 
 export default class Login extends Component {
@@ -30,14 +31,12 @@ export default class Login extends Component {
 
   render() {
     return (
-        
-        <div className= "col-md-3">
-        <div className ="mb-4">
-            <img src={zeo} className="float-lg-right" />
-         </div>
+      <div className= "col-md-8">
+       <div className="zeo">
+         <img src={zeo}/>
+        </div>
       <div className="card">
-      <div className="card-body">
-
+      <div className="card-body">   
                           <form onSubmit = {this.handleSubmit}>
                           <div className="form-group">
                               <label htmlform="name">Username</label>
@@ -88,7 +87,7 @@ export default class Login extends Component {
           
                               />
                               </div>                    
-                              <button className="btn btn-primary">Login</button>
+                              <button className="btn btn-dark">Login</button>
                           </form>
                       </div>
                          

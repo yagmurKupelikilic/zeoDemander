@@ -1,0 +1,19 @@
+.zeo{
+   display: block;
+   float: right;
+   width: 50px;
+   margin: 200px;
+  }
+.card {
+    display: block;
+    float: left;
+    height: 500px;
+    width: 400px; 
+    margin: 50px;
+  }
+  .card-body{
+    background:  ivory;
+    margin-top: 40px;
+  }
+ 
+  
