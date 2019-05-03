@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./Login.css";
 import zeo from '../zeo.png';
 import "./register.css"
+import Navbar from '../layout/Navbar';
+
 
 
 export default class Login extends Component {
@@ -31,6 +33,8 @@ export default class Login extends Component {
 
   render() {
     return (
+      <div id="login">
+      <Navbar title ="ZeoDemander"/>
       <div className= "col-md-8">
        <div className="zeo">
          <img src={zeo}/>
@@ -87,10 +91,11 @@ export default class Login extends Component {
           
                               />
                               </div>                    
-                              <button className="btn btn-dark">Login</button>
+                              <button className="btn btn-dark">Register</button>
                           </form>
                       </div>
                          
+                      </div>
                       </div>
                       </div>
 
