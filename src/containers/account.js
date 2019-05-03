@@ -1,5 +1,6 @@
 import React, { Component } from "react"
 import {Link} from "react-router-dom";
+import "./account.css"
 
 class account extends Component {
   render() {
@@ -20,12 +21,12 @@ class account extends Component {
  </ul>
  </nav>
 
- <p>To give order, please fill in the blank</p>
+ <p>You can order here</p>
 
 <form className="form">
 
 <div className="form-group">
-<label htmlform="username">Username</label>
+<label htmlform="name">Username</label>
 <input 
 type="name"
 name="name"
@@ -34,12 +35,39 @@ placeholder="Enter username"/>
 
 </div>
 
-</form>
+<div className="form-group">
+<label htmlform="link">Link to</label>
+<input 
+type="link"
+name="link"
+id="link"
+placeholder="Enter the link"/>
 
+</div>
+
+<div className="form-group">
+<label htmlform="link">Order type</label>
+<input 
+type="name"
+name="name"
+id="name"
+placeholder="Enter the kind of order"/>
+
+</div>
+
+<div className="form-group">
+<label htmlform="link">Estimated price</label>
+<input 
+type="number"
+name="number"
+id="number"
+placeholder="Enter the estimated price"/>
+
+</div>
 
       
-
-      
+<button className ="btn btn-danger" type ="submit">Give Order</button>
+</form>   
    </div>
       
     );
