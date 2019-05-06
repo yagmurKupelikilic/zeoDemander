@@ -50,7 +50,7 @@ export default class Login extends Component {
                                   id = "id"
                                   placeholder =" Enter username "
                                   className= "form-control"
-                                  onChange = {this.changeInput}
+                                  onChange = {this.handleChange}
           
                               />
                               </div>
@@ -62,7 +62,7 @@ export default class Login extends Component {
                                   id = "id"
                                   placeholder =" Enter email "
                                   className= "form-control"
-                                  onChange = {this.changeInput}
+                                  onChange = {this.handleChange}
           
                               />
                               </div>
@@ -74,7 +74,7 @@ export default class Login extends Component {
                                   id = "id"
                                   placeholder =" Enter email "
                                   className= "form-control"
-                                  onChange = {this.changeInput}
+                                  onChange = {this.handleChange}
           
                               />
                               </div>
@@ -87,7 +87,7 @@ export default class Login extends Component {
                                   id = "id"
                                   placeholder =" Enter password "
                                   className= "form-control"
-                                  onChange = {this.changeInput}
+                                  onChange = {this.handleChange}
           
                               />
                               </div>                    

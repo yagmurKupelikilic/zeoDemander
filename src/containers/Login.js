@@ -2,36 +2,52 @@ import React, { Component } from "react";
 import "./Login.css";
 import seozeo from '../seozeo.png';
 import Navbar from '../layout/Navbar';
+import {Redirect} from 'react-router-dom'
 
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
-
+    let loggedIn =false
     this.state = {
-      email: "",
-      password: ""
-    };
+      email: '',
+      password: '',
+      loggedIn
+    }
+    this.onChange = this.onChange.bind(this)
+    this.submitForm = this.submitForm.bind(this)
   }
 
   validateForm() {
     return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
-  handleChange = event => {
+  onChange(e) {
     this.setState({
-      [event.target.id]: event.target.value
-    });
+      [e.target.name]: e.target.value
+    })
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  submitForm(e) {
+    e.preventDefault();
+   const { email, password} = this.state
+   //login
+   if(email === "yagmur.kupelikilic@icerik.com" && password === "123"){
+     localStorage.setItem("token", "kedfjhdlkjvfdkjhg")
+     this.setState({
+       loggedIn: true
+     })
+   }
   }
 
+ 
   render() {
+    if(this.state.loggedIn){
+      return <Redirect to="/account" />
+    }
     return (
       <div id="login">
-      <Navbar title ="ZeoDemander"/>
+     <Navbar title ="ZeoDemander"/>
 
       <div className= "col-md-8">
       <div className="seozeo">
@@ -40,16 +56,17 @@ export default class Login extends Component {
       <div className="card">
       <div className="card-body">
   
-                          <form onSubmit = {this.handleSubmit} className="form">
+                          <form onSubmit = {this.submitForm} className="form">
                               <div className="form-group">
                               <label htmlform="email">Email</label>
                               <input 
                                   type="email"
                                   name="email"
                                   id = "id"
+                                  value={this.state.email}
                                   placeholder =" Enter email "
                                   className= "form-control"
-                                  onChange = {this.changeInput}
+                                  onChange = {this.onChange}
           
                               />
                               </div>
@@ -60,9 +77,10 @@ export default class Login extends Component {
                                   type="password"
                                   name="password"
                                   id = "id"
+                                  value={this.state.password}
                                   placeholder =" Enter password "
                                   className= "form-control"
-                                  onChange = {this.changeInput}
+                                  onChange = {this.onChange}
           
                               />
                               </div>                    

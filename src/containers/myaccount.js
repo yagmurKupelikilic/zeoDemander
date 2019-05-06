@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 
-export default class myaccount extends Component {
+export default class Myaccount extends Component {
   render() {
     return (
       <div>
@@ -14,7 +14,7 @@ export default class myaccount extends Component {
  </li>
  
  <li className="nav-item active">
-   <Link to ="/myaccount" className="nav-link" >Given orders</Link>
+   <Link to ="/Myaccount" className="nav-link" >Given orders</Link>
  </li>
  
  </ul>

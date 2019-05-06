@@ -1,9 +1,28 @@
 import React, { Component } from "react"
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import "./account.css"
 
-class account extends Component {
+class Account extends Component {
+  constructor(props){
+    super(props)
+      const token =localStorage.getItem("token")
+
+      let loggedIn =true
+      
+      if(token == null){
+        loggedIn = false
+      }
+      
+      this.state = {
+        loggedIn
+      }
+    
+    
+  }
   render() {
+    if(this.state.loggedIn === false){
+      return <Redirect to ="/login" />
+    }
     return (
       <div id="account">
       <nav className ="navbar-nav navbar-expand-lg navbar-dark bg-dark mb-3 p-3">
@@ -15,9 +34,13 @@ class account extends Component {
  </li>
  
  <li className="nav-item active">
-   <Link to ="/myaccount" className="nav-link" >My account</Link>
+   <Link to ="/Myaccount" className="nav-link" >My account</Link>
  </li>
  
+ <li className="nav-item active">
+   <Link to ="/logout" className="nav-link" >Logout</Link>
+ </li>
+
  </ul>
  </nav>
 
@@ -72,4 +95,4 @@ placeholder="Enter the estimated price"/>
       
     );
     }
-}export default account;
+}export default Account;
