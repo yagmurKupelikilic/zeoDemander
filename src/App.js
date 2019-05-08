@@ -5,8 +5,7 @@ import Orders from './containers/Orders';
 import Myaccount from './containers/Myaccount';
 import Register from './containers/Register';
 import Account from './containers/Account';
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import Navbar from './layout/Navbar';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Logout from  './containers/Logout'
 
 class App extends Component {
@@ -17,7 +16,7 @@ class App extends Component {
      
    
       <Switch>
-      <Route exact path = "/" component ={Login} />
+      <Route exact path = "/" component ={Register} />
         <Route exact path = "/login" component ={Login} />
         <Route exact path = "/register" component ={Register} />
         <Route exact path = "/myaccount" component ={Myaccount} />

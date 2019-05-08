@@ -3,6 +3,7 @@ import "./Login.css";
 import seozeo from '../seozeo.png';
 import Navbar from '../layout/Navbar';
 import {Redirect} from 'react-router-dom'
+import {Link} from "react-router-dom";
 
 
 export default class Login extends Component {
@@ -51,13 +52,13 @@ export default class Login extends Component {
 
       <div className= "col-md-8">
       <div className="seozeo">
-         <img src={seozeo}/>
+         <img src={seozeo} alt="seo"/>
         </div>
       <div className="card">
       <div className="card-body">
   
                           <form onSubmit = {this.submitForm} className="form">
-                              <div className="form-group">
+                          <div className="form-group">
                               <label htmlform="email">Email</label>
                               <input 
                                   type="email"
@@ -85,6 +86,8 @@ export default class Login extends Component {
                               />
                               </div>                    
                               <button className ="btn btn-danger btn-block" type ="submit">Login</button>
+
+                              <Link to="/forgotPass" className="link">Did you forget your password ?</Link>
                           </form>
                       </div>
                       </div>

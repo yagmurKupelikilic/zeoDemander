@@ -44,7 +44,7 @@ class Account extends Component {
  </ul>
  </nav>
 
- <p>You can order here</p>
+ <h3>ORDER FORM</h3>
 
 <form className="form">
 
@@ -59,6 +59,36 @@ placeholder="Enter username"/>
 </div>
 
 <div className="form-group">
+<label htmlform="name">Office</label>
+<input 
+type="name"
+name="name"
+id="name"
+placeholder="Enter which office is"/>
+
+</div>
+
+<div className="form-group">
+<label htmlform="name">Order type</label>
+<input 
+type="name"
+name="name"
+id="name"
+placeholder="E.g chair"/>
+
+</div>
+
+<div className="form-group">
+<label htmlform="number">Amount</label>
+<input 
+type="number"
+name="number"
+id="number"
+placeholder="Enter how many"/>
+
+</div>
+
+<div className="form-group">
 <label htmlform="link">Link to</label>
 <input 
 type="link"
@@ -69,17 +99,17 @@ placeholder="Enter the link"/>
 </div>
 
 <div className="form-group">
-<label htmlform="link">Order type</label>
+<label htmlform="name">Status</label>
 <input 
 type="name"
 name="name"
 id="name"
-placeholder="Enter the kind of order"/>
+placeholder="Enter the status of order"/>
 
 </div>
 
 <div className="form-group">
-<label htmlform="link">Estimated price</label>
+<label htmlform="number">Price</label>
 <input 
 type="number"
 name="number"
@@ -87,6 +117,7 @@ id="number"
 placeholder="Enter the estimated price"/>
 
 </div>
+
 
       
 <button className ="btn btn-danger" type ="submit">Give Order</button>
