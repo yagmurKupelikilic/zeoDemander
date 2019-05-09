@@ -7,9 +7,9 @@ export default class Orders extends Component {
         <nav className="navbar-nav navbar-expand-lg navbar-dark bg-dark mb-3 p-3">
          <a href="/login" className="navbar-brand">{"ZeoDemander"}</a>
          <ul className="navbar-nav ml-auto">
-          <li className="nav-item active">
-            <Link to ="/myaccount" className="nav-link" >Myaccount</Link>
-           </li>
+         <li className="nav-item active">
+           <Link to ="/logout" className="nav-link" >Logout</Link>
+          </li>
          </ul>
       </nav>
 
@@ -22,6 +22,7 @@ export default class Orders extends Component {
                 name="name"
                 type="name"
                 id="id"
+                
                 >
                 </input>
 

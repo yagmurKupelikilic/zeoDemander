@@ -13,30 +13,39 @@ export default class Register extends Component {
     super(props);
     let registered=false;
     this.state = {
-      username: "",
       email: "",
       password: "",
-      passCheck: "",
       registered
-    };
+    }
+    this.onChange = this.onChange.bind(this)
+    this.submitForm = this.submitForm.bind(this)
   }
 
   validateForm() {
-    return this.state.username.length > 0 && this.state.email.length > 0 && this.state.password.length > 0 && this.state.passcheck.length > 0;
+    return this.state.email.length > 0 && this.state.password.length > 0;
   }
 
-  handleChange = event => {
+  onChange(e) {
     this.setState({
-      [event.target.id]: event.target.value
-    });
+      [e.target.name]: e.target.value
+    })
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  submitForm(e) {
+    e.preventDefault();
+   const { email, password} = this.state
+   //login
+   if(email === "yagmur.kupelikilic@icerik.com" || email === "ygmr.96@hotmail.com" && password === "123"){
+     localStorage.setItem("token", "kedfjhdlkjvfdkjhg")
+     this.setState({
+       registered: true
+     })
+   }
   }
+
 
   render() {
-    if(this.state.register){
+    if(this.state.registered){
       return <Redirect to="/login" />
     }
     return (
@@ -48,18 +57,9 @@ export default class Register extends Component {
         </div>
       <div className="card">
       <div className="card-body">   
-                          <form onSubmit = {this.handleSubmit}>
+                          <form onSubmit = {this.submitForm}>
                           <div className="form-group">
-                              <label htmlform="username">Username</label>
-                              <input 
-                                  type="username"
-                                  name="username"
-                                  id = "userId"
-                                  placeholder =" Enter username "
-                                  className= "form-control"
-                                  onChange = {this.handleChange}
-          
-                              />
+                       
                               </div>
                               <div className="form-group">
                               <label htmlform="email">Email</label>
@@ -67,9 +67,10 @@ export default class Register extends Component {
                                   type="email"
                                   name="email"
                                   id = "emailId"
+                                  value={this.state.email}
                                   placeholder =" Insert a valid email "
                                   className= "form-control"
-                                  onChange = {this.handleChange}
+                                  onChange = {this.onChange}
           
                               />
                               </div>
@@ -81,23 +82,11 @@ export default class Register extends Component {
                                   id = "passId"
                                   placeholder =" Choose a password "
                                   className= "form-control"
-                                  onChange = {this.handleChange}
+                                  onChange = {this.onChange}
           
                               />
                               </div>
           
-                              <div className="form-group">
-                              <label htmlform="password-check">Password</label>
-                              <input 
-                                  type="password"
-                                  name="password"
-                                  id = "checkId"
-                                  placeholder =" Retype your password "
-                                  className= "form-control"
-                                  onChange = {this.handleChange}
-          
-                              />
-                              </div>                    
                               <button className="btn btn-dark btn-block" type ="submit">Register</button>
                               <Link to="/login" className="link">Have you already registered ?</Link>
 

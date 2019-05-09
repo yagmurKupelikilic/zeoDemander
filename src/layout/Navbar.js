@@ -11,7 +11,6 @@ function Navbar({title}) {
    <ul className="navbar-nav ml-auto">
      <li className="nav-item active">
      <Link to ="/login" className="nav-link" >Login</Link>
-     {/* <img src={seozeo} alt="seo"/> */}
      </li>
 
      <li className="nav-item active">

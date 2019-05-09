@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from "react-router-dom";
 import Navbar from '../layout/Navbar';
+import adam from '../adam.gif';
 
 
 export default class Logout extends Component {
@@ -13,7 +14,9 @@ export default class Logout extends Component {
         
       <div>
         <Navbar title={"ZeoDemander"}/>
-
+        <div className="adam">
+         <img src={adam} alt="adam"/>
+        </div>
 
         <h1>You have been logout!</h1>
         <p>Please click if you want to login again</p>

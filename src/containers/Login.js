@@ -3,7 +3,6 @@ import "./Login.css";
 import seozeo from '../seozeo.png';
 import Navbar from '../layout/Navbar';
 import {Redirect} from 'react-router-dom'
-import {Link} from "react-router-dom";
 
 
 export default class Login extends Component {
@@ -33,7 +32,7 @@ export default class Login extends Component {
     e.preventDefault();
    const { email, password} = this.state
    //login
-   if(email === "yagmur.kupelikilic@icerik.com" && password === "123"){
+   if(email === "yagmur.kupelikilic@icerik.com" || email === "ygmr.96@hotmail.com"  && password === "123"){
      localStorage.setItem("token", "kedfjhdlkjvfdkjhg")
      this.setState({
        loggedIn: true
@@ -87,7 +86,6 @@ export default class Login extends Component {
                               </div>                    
                               <button className ="btn btn-danger btn-block" type ="submit">Login</button>
 
-                              <Link to="/forgotPass" className="link">Did you forget your password ?</Link>
                           </form>
                       </div>
                       </div>
