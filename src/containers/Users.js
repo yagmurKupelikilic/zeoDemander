@@ -6,6 +6,7 @@ class Users extends Component {
   render() {
 
       return(
+        //value kullanabilmek için userconsumer
           <UserConsumer>
             {
               value => {

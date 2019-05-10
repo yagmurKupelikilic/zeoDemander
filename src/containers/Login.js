@@ -32,7 +32,7 @@ export default class Login extends Component {
     e.preventDefault();
    const { email, password} = this.state
    //login
-   if(email === "yagmur.kupelikilic@icerik.com" || email === "ygmr.96@hotmail.com"  && password === "123"){
+   if(email === "yagmur.kupelikilic@icerik.com"  && password === "123"){
      localStorage.setItem("token", "kedfjhdlkjvfdkjhg")
      this.setState({
        loggedIn: true

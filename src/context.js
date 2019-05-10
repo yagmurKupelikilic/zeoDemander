@@ -4,17 +4,17 @@ const UserContext = React.createContext();
 // Provider, Consumer
 const reducer = (state, action) => {
     switch(action.type){
-        case "DELETE_USER":
+        case "DELETE_Order":
         return {
             ...state, 
             users: state.users.filter(user => action.payload !== user.id ) 
         }
-        case  "ADD_USER":
+        case  "ADD_ORDER":
         return {
-          ...state,
+          ...state, //es6 eski state i ayırdık (...)
           users : [...state.users,action.payload]
         }
-        case "UPDATE_USER" : 
+        case "UPDATE_ORDER" : 
         return {
           ...state,
           users: state.users.map(user => user.id === action.payload.id ? action.payload : user)
@@ -53,13 +53,15 @@ export class UserProvider extends Component {
   render() {
     return (
       <div>
+        {/* Provider return edilir  value ile state gönderilir*/}
         <UserContext.Provider value = {this.state}>
-            {this.props.children}
+             {this.props.children}  {/* it is like <App.js/> */}
         </UserContext.Provider>
       </div>
     )
   }
 }
+// value kullanabilmek için oluşturulur.
 const UserConsumer = UserContext.Consumer;
 
 export default UserConsumer;

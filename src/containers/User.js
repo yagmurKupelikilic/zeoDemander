@@ -1,91 +1,57 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import UserConsumer from '../context'
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"
+export default class User extends Component {
 
-class User extends Component {
-//if there is no info in App.js
-
-state = { 
- Users: [
-  
-   
- ]
-}
-
-  // static defaultProps = {
-  //   email : "No information",
-  //   password : "No information"
-  // }
-
+  constructor(props){
+    super(props);
+    this.state = {
+      isVisible: true
+    }
+  }
   onClickEvent = (e) => {
     this.setState({
-    isVisible : !this.state.isVisible
+      isVisible : !this.state.isVisible
     })
   }
-
-   onDeleteOrder= (dispatch, e) => {
-    const {id} = this.props;
-
-    //Consumer Dispatch
-    dispatch({type: "DELETE_ORDER", payload:id});
-
-  }
- 
-  render() {
-    const {id,username,office,orderType,amount,linkTo,status,price} = this.props;
-    const {isVisible} = this.state;
+  
+   render() {
+    const { username, office, orderType, amount, linkTo, status, price } = this.props;
+    const {isVisible} =this.state;
 
     return (
-    <UserConsumer>
-    {
-      value => {
-        const {dispatch} =value;
-
-
-        return (
+      <div className="Navbar">
+      <nav className="navbar-nav navbar-expand-lg navbar-dark bg-dark mb-3 p-3">
+      <a href="/login" className="navbar-brand">{"ZeoDemander"}</a>
+      <ul className="navbar-nav ml-auto">
+      <li className="nav-item active">
+        <Link to ="/logout" className="nav-link" >Logout</Link>
+       </li>
+      </ul>
+     </nav> 
     
-
-       <div className = "col-md-8 mb-4">
-        <div className="card" style = {isVisible ? {backgroundColor : "#62848d",color :"white"} : null }> 
-           <div className ="card-header d-flex justify-content-between">
-             <h4 className = "d-inline" onClick = {this.onClickEvent}>{username}</h4>
-           <i onClick = {this.onDeleteOrder.bind(this, dispatch)} className = "far fa-trash-alt" style ={{cursor : "pointer"}}></i>
-         </div>
-         
-           {
+    
+       <div className="col-md-8 mb-4">
+        <div className="card">
+          <div className="card-header d-flex justify-content-between">
+            <h4 className="d-inline" onClick = {this.onClickEvent}>{username}</h4>
+            <i className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
+          </div>
+            {
               isVisible ? <div className="card-body">
-            
-             <p className="card-text"> Username: {username}</p>
-             <p className="card-text"> Office: {office}</p>
-             <p className="card-text"> Order Type: {orderType}</p>
-             <p className="card-text"> Amount: {amount}</p>
-             <p className="card-text"> Link To: {linkTo}</p>
-             <p className="card-text"> Status: {status}</p>
-             <p className="card-text"> Price: {price}</p>
-              <Link to ={`edit/${id}`} className="btn btn-dark btn-block">Update Order</Link>
-              </div> : null
-           }
-         </div>
-       </div>
-        )
-      }
-    }
-    </UserConsumer>
+              <p className="card-text">Office: {office}</p>
+              <p className="card-text">orderType: {orderType}</p>
+              <p className="card-text">amount: {amount}</p>
+              <p className="card-text">linkTo: {linkTo}</p>
+              <p className="card-text">status: {status}</p>
+              <p className="card-text">price: {price}</p>
+            </div> : null
+            }
+          
+
+        </div>
+      </div>
+    </div>
+
     )
-    
   }
 }
-
-User.propTypes = {
-  username : PropTypes.string.isRequired,
-  office  : PropTypes.string.isRequired,
-  orderType  : PropTypes.string.isRequired,
-  amount  : PropTypes.string.isRequired,
-  linkTo  : PropTypes.string.isRequired,
-  status  : PropTypes.string.isRequired,
-  price  : PropTypes.string.isRequired,
-  id : PropTypes.string.isRequired
-}
-
-export default User;
